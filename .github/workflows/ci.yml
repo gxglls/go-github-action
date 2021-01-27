@@ -22,18 +22,5 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Set up Go
-        uses: actions/setup-go@v1
-        with:
-          go-version: 1.14
-
       - name: Run Unit tests.
-        run: go test -coverprofile coverage.txt -covermode=atomic `go list ./... | sed '1d'`
-
-      - name: Upload Coverage report to CodeCov
-        uses: codecov/codecov-action@v1.0.15
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          file: ./coverage.txt
+        run: ls /dev
