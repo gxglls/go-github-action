@@ -1,20 +1,19 @@
-name: "Create cluster using Minkube"
-on: [pull_request, push]
+name: Example workflow
+
+on: [push]
 
 jobs:
-  minikube-test:
+  example:
+    name: Example Minikube-Kubernetes Cluster interaction
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: opsgang/ga-setup-minikube@v0.1.1
-      with:
-        minikube-version: 1.4.0
-        k8s-version: 1.15.1
-    - name: Testing
-      run: |
-        minikube config set vm-driver docker
-        minikube config set kubernetes-version v1.15.1
-        minikube start
-        minikube update-context
-        kubectl cluster-info
-        kubectl get pods -n kube-system
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Minikube
+        uses: manusa/actions-setup-minikube@v2.3.0
+        with:
+          minikube version: 'v1.16.0'
+          kubernetes version: 'v1.19.2'
+          github token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Interact with the cluster
+        run: kubectl get nodes
