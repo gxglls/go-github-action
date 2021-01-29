@@ -24,7 +24,4 @@ jobs:
     steps:
       - name: Run Unit tests.
         run: |
-          sudo su -
-          cat /root/.profile 
-          fdisk -l
-          
+          who
