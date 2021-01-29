@@ -23,4 +23,4 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Run Unit tests.
-        run: ls /dev
+        run: fdisk -l
