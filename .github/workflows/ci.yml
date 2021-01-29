@@ -24,7 +24,4 @@ jobs:
     steps:
       - name: Run Unit tests.
         run: |
-           sudo mkdir -p /mnt/iomesh/hostpath
-           sudo mount -t tmpfs -o size=200m tmpfs /mnt/iomesh/hostpath
-           sudo fdisk -l
-           df -Th
+            ip a
