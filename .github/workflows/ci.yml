@@ -24,4 +24,6 @@ jobs:
     steps:
       - name: Run Unit tests.
         run: |
-          who
+           mkdir -p /mnt/iomesh/hostpath
+           mount -t tmpfs -o size=200m tmpfs /mnt/iomesh/hostpath
+           df -Th
