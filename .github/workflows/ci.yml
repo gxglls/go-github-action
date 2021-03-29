@@ -25,3 +25,5 @@ jobs:
       - name: Run Unit tests.
         run: |
             ip a
+            lsblk
+            ls /dev/sd*
