@@ -22,8 +22,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v2
       - name: Run Unit tests.
         run: |
-            ip a
-            lsblk
-            ls /dev/sd*
+          ./ci.sh
+        env: 
+          IP:  ${{ secrets.KEY }} 
