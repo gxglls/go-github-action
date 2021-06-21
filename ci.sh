@@ -1,3 +1,1 @@
-for ip in $IP; do
-	echo $ip
-done
+sleep 120

@@ -2,10 +2,14 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/gxglls/testaction/greet"
+	"os"
 )
 
 func main() {
-	fmt.Println(greet.Greet())
+	err := os.MkdirAll("/tmp/tmp/tmp", 0777)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Print("ok")
 }
